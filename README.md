@@ -1,5 +1,33 @@
-TuteDude Python Assignments This repository contains a collection of Python scripts developed as part of the TuteDude Python Certification program. Each script demonstrates use of functions and modules
+# PostgreSQL Database Operations using Python (Assignment 7)
 
-Implementing Database Operations using python (Assignment 7)
+This project demonstrates basic database operations using Python and PostgreSQL.
 
-Prerequisites Python 3.x installed on your machine.
+Operations implemented:
+- Database connection
+- Table creation
+- Insert data
+- Fetch data
+- User input insertion
+
+## Requirements
+
+Python 3.x
+PostgreSQL
+psycopg2
+sys
+dotenv
+os
+
+## Install dependency
+
+pip install psycopg2
+
+## Database Setup
+
+Create database in PostgreSQL:
+
+CREATE DATABASE db_employees;
+
+## Run the program
+
+python db_operations.py
