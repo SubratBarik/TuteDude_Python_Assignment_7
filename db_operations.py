@@ -1,6 +1,4 @@
-# --------------------------------
-# Packages
-# --------------------------------
+# Packages used in the program
 import psycopg2
 import sys
 import os
@@ -8,9 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# --------------------------------
-# Database Connection Function
-# --------------------------------
+# Database connection
 def getConnection():
     try:
         return psycopg2.connect(
@@ -25,9 +21,7 @@ def getConnection():
         sys.exit(1)
 
 
-# --------------------------------
-# Create Table
-# --------------------------------
+# Function to create the table
 def table():
 
     conn = getConnection()
@@ -49,19 +43,15 @@ def table():
 
         conn.commit()
 
-        print("Employees table is ready!")
+        print("Employees table created successfully.")
 
     except Exception as e:
-        print("Error creating table:", e)
+        print("Error:", e)
 
-    finally:
-        cur.close()
-        conn.close()
+    conn.close()
 
 
-# --------------------------------
-# Insert Data
-# --------------------------------
+# Function to insert user data
 def data_insert(name, age, email):
 
     conn = getConnection()
@@ -83,16 +73,11 @@ def data_insert(name, age, email):
         print("\nEmployee data inserted successfully")
 
     except Exception as e:
-        print("Error inserting data:", e)
+        print("Error:", e)
 
-    finally:
-        cur.close()
-        conn.close()
+    conn.close()
 
-
-# --------------------------------
-# Fetch Data
-# --------------------------------
+# Function to fetch or display data from DB
 def fetch_data():
 
     conn = getConnection()
@@ -118,16 +103,12 @@ def fetch_data():
             print(f"ID: {emp[0]}, Name: {emp[1]}, Age: {emp[2]}, Email: {emp[3]}")
 
     except Exception as e:
-        print("Error fetching data:", e)
+        print("Error:", e)
 
-    finally:
-        cur.close()
-        conn.close()
+    conn.close()
 
 
-# --------------------------------
-# User Input Function
-# --------------------------------
+# Function to take data from users
 def user_inputs():
 
     try:
@@ -141,9 +122,7 @@ def user_inputs():
         print("Invalid age input")
 
 
-# --------------------------------
-# Main Program
-# --------------------------------
+# Function which handles overall program
 def main():
 
     print("\nPostgreSQL & Python Database Operations\n")
