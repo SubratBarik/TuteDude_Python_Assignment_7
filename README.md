@@ -1,6 +1,6 @@
 # PostgreSQL Database Operations using Python
 
-This project demonstrates basic database operations using Python and PostgreSQL.
+This project shows how to perform basic database operations using Python and PostgreSQL. The program connects to a PostgreSQL database, creates a table, inserts employee data, and displays records from the table.
 
 Operations implemented:
 - Database connection
@@ -11,16 +11,14 @@ Operations implemented:
 
 ## Requirements
 
-Python 3.x
-PostgreSQL
-psycopg2
-sys
-dotenv
-os
+Python 3.x  
+PostgreSQL  
+psycopg2  
+python-dotenv
 
 ## Install dependency
 
-pip install psycopg2
+pip install psycopg2 python-dotenv
 
 ## Create a .env file in the project root and add the following variables:
 
